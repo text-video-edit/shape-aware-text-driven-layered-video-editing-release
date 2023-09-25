@@ -1,0 +1,11 @@
+crop_area:
+- 0.0
+- 0.9990740740740741
+- 0.028125
+- 0.7713541666666667
+guidance_scale: 4
+keyframe_index: 25
+n_samples: 16
+prompt: bird, high resolution
+sd_mode: inpaint
+strength: 0.3

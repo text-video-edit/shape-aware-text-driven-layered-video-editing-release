@@ -1,0 +1,11 @@
+crop_area:
+- 0.2520852641334569
+- 0.9165894346617238
+- 0.535695674830641
+- 0.9093277748827514
+guidance_scale: 4
+keyframe_index: 35
+n_samples: 16
+prompt: running sports car
+sd_mode: inpaint
+strength: 0.3
