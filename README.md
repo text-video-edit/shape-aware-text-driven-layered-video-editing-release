@@ -14,13 +14,13 @@ Ji-Ze G. Jang,
 
 
 ```
-git clone --recursive 
+git clone --recursive https://github.com/text-video-edit/Shape-aware-text-driven-layered-video-editing.git 
 pip install -r requirements.txt
 ```
 
-- Download model weights
+- Prepare super-resolution model (just for improving the quality of the diffusion-edited images)
 ```
-./scripts/download_models.sh
+./scripts/setup_esrgan.sh
 ```
 
 ### Data structure
@@ -50,11 +50,12 @@ For instance, `DATA_DIR=data/car-turn` and  `EDIT_DIR=data/car-turn/edit_sports_
   ```
 	python scripts/edit_foreground [DATA_DIR] [TEXT_PROMPT]
   ```
-  Please put your HuggingFace token file named `TOKEN` in root directory. 
-  It will create the `EDIT_DIR` under `DATA_DIR` and all the keyframe's data will be saved in `EDIT_DIR`. Note that we may manually refine the mask of the edited keyframe sometime since MaskRCNN may fail to find precise masks for diffusion-generated images.
+  - Please put your HuggingFace token file named `TOKEN` in root directory. 
+  - It will create the `EDIT_DIR` under `DATA_DIR` and all the keyframe's data will be saved in `EDIT_DIR`. Note that we may manually refine the mask of the edited keyframe sometime since MaskRCNN may fail to find precise masks for diffusion-generated images.
 
-- Semantic correspondence
-  To achieve the best editing results, we use the warping tools in Photoshop to obtain the semantic correspondence between `EDIT_DIR/keyframe_input_crop.png` and `EDIT_DIR/keyframe_edited_crop.png`, and saved as `EDIT_DIR/semantic_correspondence_crop.npy`. The correspondence format is similar to optical flow, ranging from [-1, 1].
+  - Semantic correspondence
+
+    To achieve the best editing results, we use the warping tools in Photoshop to obtain the semantic correspondence between `EDIT_DIR/keyframe_input_crop.png` and `EDIT_DIR/keyframe_edited_crop.png`, and saved as `EDIT_DIR/semantic_correspondence_crop.npy`. The correspondence format is similar to optical flow, ranging from [-1, 1].
 
 - Optimization
   ```
