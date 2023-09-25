@@ -14,7 +14,7 @@ Ji-Ze G. Jang,
 
 
 ```
-git clone --recursive https://github.com/text-video-edit/Shape-aware-text-driven-layered-video-editing.git 
+git clone --recursive https://github.com/text-video-edit/shape-aware-text-driven-layered-video-editing-release.git 
 pip install -r requirements.txt
 ```
 
